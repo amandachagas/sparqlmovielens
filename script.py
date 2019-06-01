@@ -59,12 +59,144 @@ movies['title'] = movies['title'].apply(lambda x: x[:-7])
 movies['genres'] = movies['genres'].apply(lambda x: x.replace('|',', '))
 movies['abstract'] = ''
 
+aux_df = movies.copy()
 
-for index, row in movies.iterrows():
+
+
+
+aux = aux_df[0:1000]
+
+for index, row in aux.iterrows():
     print('Index: {}'.format(index))
-    row.abstract = get_abstract_query_sparql(row.title)
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
 
-movies.to_csv('results.csv')
-print('\n\n============= DONE.')
+aux.to_csv('results.csv')
+print('\n\n============= DONE results.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[1000:2000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_01.csv')
+print('\n\n============= DONE results_01.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[2000:3000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_02.csv')
+print('\n\n============= DONE results_02.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[3000:4000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_03.csv')
+print('\n\n============= DONE results_03.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[4000:5000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_04.csv')
+print('\n\n============= DONE results_04.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[5000:6000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_05.csv')
+print('\n\n============= DONE results_05.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[6000:7000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_06.csv')
+print('\n\n============= DONE results_06.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[7000:8000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_07.csv')
+print('\n\n============= DONE results_07.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[8000:9000]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_08.csv')
+print('\n\n============= DONE results_08.csv ')
+elapsed_time = time.time() - start_time
+print('TIME: {}'.format(elapsed_time))
+
+
+
+
+aux = aux_df[9000:]
+
+for index, row in aux.iterrows():
+    print('Index: {}'.format(index))
+    aux.loc[index,'abstract'] = get_abstract_query_sparql(row.title)
+
+aux.to_csv('results_09.csv')
+print('\n\n============= DONE results_09.csv ')
 elapsed_time = time.time() - start_time
 print('TIME: {}'.format(elapsed_time))
