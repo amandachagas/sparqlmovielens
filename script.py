@@ -8,6 +8,9 @@ def get_abstract_query_sparql(query):
     if "'" in search:
         search = search.replace("'", '')
     search = search.replace(' ', '_')
+    search = search.replace('*', '')
+    search = search.replace('(', '')
+    search = search.replace(')', '')
     sparql = SPARQLWrapper("http://dbpedia.org/sparql")
     print("---> QUERY: {}".format(search))
     
