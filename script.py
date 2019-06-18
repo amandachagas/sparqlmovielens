@@ -203,3 +203,23 @@ aux.to_csv('results_09.csv')
 print('\n\n============= DONE results_09.csv ')
 elapsed_time = time.time() - start_time
 print('TIME: {}'.format(elapsed_time))
+
+
+
+
+
+results = pd.read_csv('results.csv', low_memory=False)
+results_01 = pd.read_csv('results_01.csv', low_memory=False)
+results_02 = pd.read_csv('results_02.csv', low_memory=False)
+results_03 = pd.read_csv('results_03.csv', low_memory=False)
+results_04 = pd.read_csv('results_04.csv', low_memory=False)
+results_05 = pd.read_csv('results_05.csv', low_memory=False)
+results_06 = pd.read_csv('results_06.csv', low_memory=False)
+results_07 = pd.read_csv('results_07.csv', low_memory=False)
+results_08 = pd.read_csv('results_08.csv', low_memory=False)
+results_09 = pd.read_csv('results_09.csv', low_memory=False)
+
+results = results.append([results_01,results_02,results_03,results_04,results_05,results_06,results_07,results_08,results_09],ignore_index=True)
+results = results.drop(columns=results.columns[0], axis=1)
+
+results.to_csv('final_results.csv')
